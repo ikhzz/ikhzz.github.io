@@ -27,7 +27,8 @@ aside {
     position: fixed;
     grid-area: aside;
     height: 100%;
-    width: 200px;
+    width: 220px;
+    box-sizing: border-box;
 }
 aside img {
     width: 70px;
@@ -44,7 +45,8 @@ aside .logo, aside .copyright  {
     background-color: black;
     position: fixed;
     display: flex;
-    left: 260px;
+    left: 240px;
+    z-index: 100;
 }
 .nav li {
     margin: 10px 0px;
@@ -55,9 +57,7 @@ aside .logo, aside .copyright  {
 .content {
     display: grid;
     grid-area: content;
-    background-color: rgba(230, 230, 230, 0.9);
-    padding-left: 20px;
-    
+    background-color: rgba(237, 236, 250, 0.9);
 }
 section {
     min-height: 100vh;
@@ -68,16 +68,151 @@ section {
     justify-items: center;
     row-gap: 15px;
 }
-.about {
-    display: grid;
-    padding-top: 100px;
-    padding-left: 20px;
-}
 .home img {
     width: 200px;
     border-radius: 50%;
     border: 4px solid rgba(200, 200, 200, 0.9);
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+}
+.about {
+    padding: 0px 20px 10px;
+    display: none;
+    align-content: baseline;
+    row-gap: 40px;
+}
+.about h2, .showcase h2, .portfolio h2 {
+    padding-top: 90px;
+    border-bottom: 2px solid rgba(200, 200, 200, 0.9);
+}
+.about h3 {
+    margin-bottom: 16px;
+}
+.attr {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 'detail gauge';
+}
+.detail {
+    grid-area: detail;
+}
+.detail p {
+    margin-bottom: 8px;
+}
+.gauge {
+    grid-area: gauge;
+}
+.g-title {
+    display: flex;
+    justify-content: space-between;
+}
+.g-bar {
+    background-color: rgba(200, 200, 200, 0.9);
+    max-width: 100%;
+    height: 10px;
+    border-radius: 10px;
+}
+.g-amount {
+    background-color: red;
+    position: relative;
+    height: 9px;
+    width: 10px;
+    border-radius: 10px;
+}
+.desc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    grid-template-areas: 'edu exp';
+}
+.desc h1 {
+    margin-bottom: 15px;
+}
+.edu::before, .exp::before{
+    content: '';
+    width: 2px;
+    position: absolute;
+    height: 94.5%;
+    background-color: red;
+}
+.edu, .exp {
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    height: auto;
+    position: relative;
+}
+.edu li::before, .exp li::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 17px;
+    background-color: red;
+    border-radius: 50%;
+}
+.edu li, .exp li {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.edu li:last-child, .exp li:last-child {
+    margin-bottom: 0px;
+}
+.edu li h6, .edu li h4, .exp li h6, .exp li h4 {
+    margin-bottom: 10px;
+}
+table {
+    table-layout: fixed ;
+    width: 100% ;
+}
+td {
+width: 25% ;
+}
+.showcase {
+    display: none;
+    padding: 0px 20px 10px;
+    row-gap: 20px;
+}
+.case {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+}
+.case li {
+    padding: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    height: fit-content;
+}
+.case li:hover {
+    transform: scale(1.1);
+}
+.case img {
+    width: 100%;
+}
+.portfolio {
+    display: grid;
+    padding: 0px 20px 10px;
+    row-gap: 20px;
+}
+.p-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+}
+.p-item li {
+    padding: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    height: fit-content;
+}
+.p-item li:hover {
+    transform: scale(1.1);
+}
+.p-item img {
+    width: 100%;
 }
 @media screen and (max-width:1000px) {
     main {
@@ -87,5 +222,41 @@ section {
     }
     aside {
         display: none;
+    }
+}
+@media screen and (max-width:451px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'content';
+    }
+    aside {
+        display: none;
+    }
+    .attr {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'gauge' 'detail';
+        row-gap: 20px;
+    }
+    .detail {
+        display: grid;
+        grid-area: detail;
+    }
+    .gauge {
+        display: grid;
+        grid-area: gauge;
+    }
+    .desc {
+        display: grid;
+        row-gap: 20px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'edu' 'exp';
+    }
+    .edu {
+        grid-area: edu;
+    }
+    .exp {
+        grid-area: exp;
     }
 }
