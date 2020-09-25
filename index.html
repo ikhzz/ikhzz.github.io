@@ -169,21 +169,42 @@
                     <li><img src="img/certdummy1.jpg" alt=""></li>
                     <li><img src="img/certdummy2.png" alt=""></li>
                 </ul>
+                <div class="lightcase">
+                    <div class="lightcaseContent">
+                        <div class="lightcaseClose"></div>
+                        <img src="img/certdummy2.png" alt="lighbox-img">
+                        <div class="lightCaption">
+                            <p>Web Development</p>
+                            <p>1 of 6</p>
+                        </div>
+                    </div>
+                    <div class="lightcaseControl">
+                        <div class="next">&#8678;</div>
+                        <div class="prev">&#8680;</div>
+                    </div>
+                </div>
             </section>
             <section class="portfolio">
                 <div>
                     <h2>Portfolio</h2>
                 </div>
+                <div class="filter">
+                    <button type="button" data-filter="all">All</button>
+                    <button type="button" data-filter="webdesign">Webdesign</button>
+                    <button type="button" data-filter="photography">Photography</button>
+                    <button type="button" data-filter="drawing">Drawing</button>
+                </div>
                 <ul class="p-item">
-                    <li><img src="img/certdummy1.jpg" alt=""></li>
-                    <li><img src="img/certdummy2.png" alt=""></li>
-                    <li><img src="img/certdummy1.jpg" alt=""></li>
-                    <li><img src="img/certdummy2.png" alt=""></li>
-                    <li><img src="img/certdummy1.jpg" alt=""></li>
-                    <li><img src="img/certdummy2.png" alt=""></li>
+                    <li data-category="webdesign"><img src="https://source.unsplash.com/random/200x200" alt=""></li>
+                    <li data-category="webdesign"><img src="https://source.unsplash.com/random/201x201" alt=""></li>
+                    <li data-category="photography"><img src="https://source.unsplash.com/random/202x202" alt=""></li>
+                    <li data-category="photography"><img src="https://source.unsplash.com/random/203x203" alt=""></li>
+                    <li data-category="drawing"><img src="https://source.unsplash.com/random/204x204" alt=""></li>
+                    <li data-category="drawing"><img src="https://source.unsplash.com/random/205x205" alt=""></li>
                 </ul>
             </section>
         </div>
     </main>
+    <script src="js/script.js"></script>
 </body>
 </html>

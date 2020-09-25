@@ -180,8 +180,8 @@ width: 25% ;
     gap: 20px;
 }
 .case li {
-    padding: 10px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+    border: 10px solid white;
     border-radius: 10px;
     height: fit-content;
 }
@@ -191,10 +191,94 @@ width: 25% ;
 .case img {
     width: 100%;
 }
+.lightcase {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    place-content: center;
+    animation: lightbox 1s forwards;
+}
+@keyframes lightbox {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.lightcase img {
+    height: auto;
+    width: auto;
+    max-height: 450px;
+    max-width: 100%;
+}
+.lightCaption {
+    position: relative;
+    color: white;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+.lightcaseClose {
+    display: grid;
+    justify-items: right;
+}
+.lightcaseClose::after {
+    content: 'x';
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    text-align: center;
+    display: grid;
+    justify-self: right;
+    cursor: pointer;
+}
+.lightcaseControl {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto;
+    font-size: 35px;
+    color: red;
+}
+.lightcaseControl div {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+.lightcaseControl div:hover{
+    transform: scale(1.1);
+}
 .portfolio {
     display: grid;
     padding: 0px 20px 10px;
     row-gap: 20px;
+}
+.filter {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-evenly;
+    justify-items: center;
+}
+.filter button {
+    border-bottom: 2px solid rgba(200, 200, 200, 0.9);
+    height: 25px;
+    cursor: pointer;
 }
 .p-item {
     display: grid;
@@ -203,10 +287,10 @@ width: 25% ;
     gap: 20px;
 }
 .p-item li {
-    padding: 10px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 2px 8px rgb(150, 150, 150);
     border-radius: 10px;
     height: fit-content;
+    border: 5px solid white;
 }
 .p-item li:hover {
     transform: scale(1.1);
