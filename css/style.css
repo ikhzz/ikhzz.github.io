@@ -80,7 +80,7 @@ section {
     align-content: baseline;
     row-gap: 40px;
 }
-.about h2, .showcase h2, .portfolio h2 {
+.about h2, .showcase h2, .portfolio h2, .blog h2 {
     padding-top: 90px;
     border-bottom: 2px solid rgba(200, 200, 200, 0.9);
 }
@@ -191,7 +191,7 @@ width: 25% ;
 .case img {
     width: 100%;
 }
-.lightcase {
+.lightcase , .lightport{
     position: fixed;
     left: 0;
     top: 0;
@@ -202,6 +202,7 @@ width: 25% ;
     place-content: center;
     animation: lightbox 1s forwards;
 }
+
 @keyframes lightbox {
     0% {
         transform: scale(0.8);
@@ -212,13 +213,13 @@ width: 25% ;
         opacity: 1;
     }
 }
-.lightcase img {
+.lightcase img, .lightport img {
     height: auto;
     width: auto;
     max-height: 450px;
     max-width: 100%;
 }
-.lightCaption {
+.lightcaseCaption, .lightportCaption {
     position: relative;
     color: white;
     display: grid;
@@ -226,11 +227,11 @@ width: 25% ;
     justify-content: space-between;
     padding: 0px 20px;
 }
-.lightcaseClose {
+.lightcaseClose, .lightportClose {
     display: grid;
     justify-items: right;
 }
-.lightcaseClose::after {
+.lightcaseClose::after, .lightportClose::after {
     content: 'x';
     font-size: 20px;
     margin-bottom: 10px;
@@ -243,7 +244,7 @@ width: 25% ;
     justify-self: right;
     cursor: pointer;
 }
-.lightcaseControl {
+.lightcaseControl, .lightportControl {
     position: absolute;
     width: 100%;
     top: 50%;
@@ -253,7 +254,7 @@ width: 25% ;
     font-size: 35px;
     color: red;
 }
-.lightcaseControl div {
+.lightcaseControl div, .lightportControl div {
     background-color: white;
     border-radius: 50%;
     width: 50px;
@@ -261,11 +262,11 @@ width: 25% ;
     cursor: pointer;
     margin: 0px 10px;
 }
-.lightcaseControl div:hover{
+.lightcaseControl div:hover, .lightportControl div:hover{
     transform: scale(1.1);
 }
 .portfolio {
-    display: grid;
+    display: none;
     padding: 0px 20px 10px;
     row-gap: 20px;
 }
@@ -275,16 +276,40 @@ width: 25% ;
     justify-content: space-evenly;
     justify-items: center;
 }
-.filter button {
-    border-bottom: 2px solid rgba(200, 200, 200, 0.9);
+.filter li {
     height: 25px;
     cursor: pointer;
 }
+.filter li.active {
+    border-bottom: 2px solid rgba(200, 200, 200, 0.9);
+    color: red;
+}
 .p-item {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 200px 200px 200px;
+    justify-content: space-evenly;
     justify-items: center;
     gap: 20px;
+}
+.p-item li.hide {
+    display: none;
+}
+.p-item li.show {
+    display: grid;
+    animation: showPort 1s ease;
+}
+.show {
+    display: grid;
+}
+@keyframes showPort {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 .p-item li {
     box-shadow: 0px 2px 8px rgb(150, 150, 150);
@@ -297,6 +322,35 @@ width: 25% ;
 }
 .p-item img {
     width: 100%;
+}
+.blog{
+    display: grid;
+    padding: 0px 20px 10px;
+    row-gap: 20px;
+}
+.blog-c {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    column-gap: 40px;
+}
+.blog-c li {
+    box-shadow: 0px 2px 8px rgb(150, 150, 150);
+    border-radius: 10px;
+}
+.blog-c li img {
+    width: 100%;
+    border-radius: 10px;
+}
+.blog-c figcaption {
+    color: rgba(0,0,0,0.5);
+    margin-left: 3px;
+}
+.blog-c div {
+    padding: 10px;
+}
+.blog-c div h5 {
+    margin-top: 10px;
 }
 @media screen and (max-width:1000px) {
     main {
