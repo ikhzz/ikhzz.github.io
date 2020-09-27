@@ -52,7 +52,6 @@ function tesfunc(item, index) {
     //console.log(item, index)
     item.addEventListener('click', ()=> {
         itemindex = index;
-        console.log(item);
         changePort(item);
         togglelightbox();
     })
@@ -68,7 +67,6 @@ function togglelightbox() {
     lightboxport.classList.toggle('show')
     
 }
-console.log(lightportClose)
 lightportClose.addEventListener('click', ()=> {
     lightboxport.classList.toggle('show')
 })
@@ -90,4 +88,38 @@ function prevport() {
         itemindex--;
     }
     changePort();
+}
+
+// lighbox end
+
+const   nav = document.querySelector('.nav'),
+        navlist = document.querySelectorAll('.nav li'),
+        totalnav = navlist.length,
+        section = document.querySelectorAll('section')
+        console.log(section)
+
+for(let i=0; i<totalnav; i++) {
+    const a = navlist[i].querySelector('a');
+    a.addEventListener('click', ()=> {
+        for(let k=0; k<section.length;k++) {
+            section[k].classList.remove('back')
+        }
+        for(let j=0; j<totalnav; j++) {
+            console.log()
+            if(navlist[j].querySelector('a').classList.contains('active')) {
+                section[j].classList.add('back')
+            }
+            navlist[j].querySelector('a').classList.remove('active')
+        }
+        a.classList.add('active')
+        showSection(a);
+    })
+}
+
+function showSection(element) {
+    const a = element.getAttribute('href').split('#')[1]
+    for(let i=0; i<section.length;i++) {
+        section[i].classList.remove('active')
+    }
+    document.querySelector('#'+a).classList.add('active')
 }
