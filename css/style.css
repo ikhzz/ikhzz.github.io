@@ -16,8 +16,6 @@ a,a:link, a:visited, a:hover, a:active {
 }
 main {
     display: grid;
-    grid-template-columns: 220px 2fr;
-    grid-template-areas: 'aside content';
 }
 aside {
     display: grid;
@@ -29,7 +27,6 @@ aside {
     width: 220px;
     box-sizing: border-box;
     z-index: 5;
-    grid-area: aside;
 }
 aside img {
     width: 70px;
@@ -47,6 +44,7 @@ aside .logo, aside .copyright  {
     position: fixed;
     display: flex;
     left: 240px;
+    top: 40px;
 }
 .nav li {
     margin: 10px 0px;
@@ -61,7 +59,7 @@ aside .logo, aside .copyright  {
     display: grid;
     background-color: rgba(237, 236, 250, 0.9);
     width: 100%;
-    grid-area: content;
+    margin-left: 220px;
 }
 #home {
     display: grid;
@@ -382,17 +380,35 @@ width: 25% ;
     }
 }
 @media screen and (max-width:1000px) {
-    main {
-        display: grid;
-        grid-template-columns: 200px 1fr;
-        grid-template-areas: 'aside content';
-    }
     .content {
+        margin-left: 0px;
     }
     aside {
-        display: grid;
-        position: fixed;
+        transform: translateX(-100%);
+    }
+    .open {
         transform: translateX(0%);
+        animation: asideslide 0.5s forwards;
+    }
+    .openc {
+        margin-left: 230px;
+        animation: openc 0.5s ease;
+    }
+    @keyframes asideslide {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+    @keyframes openc {
+        0% {
+            margin-left: 0px;
+        }
+        100% {
+            margin-left: 230px;
+        }
     }
 }
 @media screen and (max-width:451px) {
@@ -400,9 +416,6 @@ width: 25% ;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas: 'content';
-    }
-    aside {
-        display: none;
     }
     .attr {
         display: grid;
@@ -430,4 +443,48 @@ width: 25% ;
     .exp {
         grid-area: exp;
     }
+    .case {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, auto);
+    }
+    .p-item {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, auto);
+    }
+    .blog-c {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, auto);
+        row-gap: 20px;
+    }
+    .content {
+        margin-left: 0px;
+    }
+    aside {
+        transform: translateX(-100%);
+    }
+    .open {
+        transform: translateX(0%);
+        animation: asideslide 0.2s forwards;
+    }
+    .openc {
+        margin-left: 230px;
+        animation: openc 0.2s ease;
+    }
+    @keyframes asideslide {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+    @keyframes openc {
+        0% {
+            margin-left: 0px;
+        }
+        100% {
+            margin-left: 230px;
+        }
+    }
+}
 }

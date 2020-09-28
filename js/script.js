@@ -123,3 +123,12 @@ function showSection(element) {
     }
     document.querySelector('#'+a).classList.add('active')
 }
+
+const   nyam = document.querySelector('.nyam'),
+        content = document.querySelector('.content'),
+        aside = document.querySelector('aside')
+
+nyam.addEventListener('click', () => {
+    aside.classList.toggle('open')
+    content.classList.toggle('openc')
+})
