@@ -42,7 +42,7 @@ aside .logo, aside .copyright  {
     width: 35px;
     background-color: black;
     position: fixed;
-    display: flex;
+    display: none;
     left: 240px;
     top: 40px;
 }
