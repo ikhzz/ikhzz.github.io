@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Landing Pages</title>
 </head>
 <body>
@@ -24,7 +25,7 @@
                 <li><a href="#blog">&#128240; Blog</a></li>
             </ul>
             <div class="copyright">
-                <p>Helelele</p>
+                <p>&copy; 2020 by ikhzz </p>
             </div>
         </aside>
         <div class="content">
@@ -32,9 +33,14 @@
                 <img src="img/logo.JPG" alt="">
                 <h1>Your Name</h1>
                 <p>My Name (Your Name), I am (Your Profession)</p>
-                <p>ikon ikon ikon ikon</p>
+                <div>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
             </section>
-            <section class="section" id="about">
+            <section class="section back" id="about">
                 <div class="head">
                     <h2>About Me</h2>
                 </div>
@@ -171,8 +177,8 @@
                 </ul>
                 <div class="lightcase">
                     <div class="lightcaseContent">
-                        <div class="lightcaseClose"></div>
-                        <img src="img/certdummy2.png" alt="lighbox-img">
+                        <div class="lightcaseClose" onclick="togglelightbox()"></div>
+                        <img src="img/logo.JPG" alt="lighbox-img">
                         <div class="lightcaseCaption">
                             <p>Web Development</p>
                             <p>1 of 6</p>
@@ -204,7 +210,7 @@
                 </ul>
                 <div class="lightport">
                     <div class="lightportContent">
-                        <div class="lightportClose"></div>
+                        <div class="lightportClose" onclick="togglelightbox()"></div>
                         <img src="img/certdummy2.png" alt="lighbox-img" onclick="nextport()">
                         <div class="lightportCaption">
                             <p class="text">Web Development</p>
